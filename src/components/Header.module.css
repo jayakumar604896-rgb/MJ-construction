@@ -4,7 +4,9 @@
   left: 0;
   width: 100%;
   height: var(--header-height);
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(12, 43, 92, 0.08);
   display: flex;
   align-items: center;
   z-index: 1000;
@@ -12,9 +14,9 @@
 }
 
 .sticky {
-  background-color: var(--dark-bg);
-  box-shadow: var(--shadow-md);
   height: 70px;
+  box-shadow: var(--shadow-md);
+  background-color: var(--white);
 }
 
 .container {
@@ -35,10 +37,24 @@
   cursor: pointer;
 }
 
-.logoIcon {
-  width: 45px;
-  height: 45px;
-  fill: var(--primary);
+.logoImage {
+  height: 56px;
+  width: auto;
+  display: block;
+  transition: var(--transition);
+}
+
+.sticky .logoImage {
+  height: 50px;
+}
+
+@media (max-width: 576px) {
+  .logoImage {
+    height: 46px;
+  }
+  .sticky .logoImage {
+    height: 42px;
+  }
 }
 
 .logoText {
@@ -80,8 +96,8 @@
 .navLink {
   font-family: var(--font-heading);
   font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--white);
+  font-weight: 700;
+  color: var(--dark-bg);
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
@@ -134,7 +150,7 @@
 .hamburger span {
   width: 100%;
   height: 2.5px;
-  background-color: var(--white);
+  background-color: var(--dark-bg);
   transition: var(--transition);
   transform-origin: left;
 }
@@ -146,7 +162,7 @@
   right: -100%;
   width: 280px;
   height: 100vh;
-  background-color: var(--dark-accent);
+  background-color: var(--dark-bg);
   box-shadow: var(--shadow-lg);
   padding: 100px 40px 40px;
   display: flex;
