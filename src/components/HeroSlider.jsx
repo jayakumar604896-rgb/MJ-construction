@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination, EffectFade } from 'swiper/modules';
 import { motion } from 'framer-motion';
-import { FaArrowRight, FaPhoneAlt } from 'react-icons/fa';
+import { FaArrowRight, FaPhoneAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -81,7 +81,10 @@ const HeroSlider = () => {
         pagination={{
           clickable: true,
         }}
-        navigation={true}
+        navigation={{
+          nextEl: '.swiper-next-btn',
+          prevEl: '.swiper-prev-btn',
+        }}
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
         className={styles.swiper}
       >
@@ -169,6 +172,14 @@ const HeroSlider = () => {
             </SwiperSlide>
           );
         })}
+
+        {/* Custom Navigation Buttons */}
+        <button className={`${styles.navBtn} ${styles.prevBtn} swiper-prev-btn`} aria-label="Previous Slide">
+          <FaChevronLeft size={16} />
+        </button>
+        <button className={`${styles.navBtn} ${styles.nextBtn} swiper-next-btn`} aria-label="Next Slide">
+          <FaChevronRight size={16} />
+        </button>
       </Swiper>
     </section>
   );

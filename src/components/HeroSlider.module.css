@@ -94,11 +94,12 @@
   }
   
   .title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
   
   .description {
     font-size: 1rem;
+    margin-bottom: 30px;
   }
   
   .buttonGroup {
@@ -109,4 +110,86 @@
   .buttonGroup a {
     width: 100%;
   }
+
+  .navBtn {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  
+  .prevBtn {
+    left: 12px !important;
+  }
+  
+  .nextBtn {
+    right: 12px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .heroContainer {
+    height: 85vh;
+    min-height: 480px;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    padding-left: 8px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+  }
+
+  .description {
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+
+  .buttonGroup {
+    gap: 8px;
+  }
+
+  .buttonGroup a {
+    padding: 10px 20px !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Custom Navigation Button Styles */
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(12, 43, 92, 0.7);
+  backdrop-filter: blur(4px);
+  border: 1.5px solid rgba(240, 101, 41, 0.4);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 0;
+}
+
+.prevBtn {
+  left: 24px;
+}
+
+.nextBtn {
+  right: 24px;
+}
+
+.navBtn:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+  transform: translateY(-50%) scale(1.05);
 }

@@ -75,7 +75,7 @@ const Header = () => {
               <line x1="50" y1="38" x2="50" y2="50" stroke="var(--primary)" strokeWidth="2" />
               <line x1="42" y1="44" x2="58" y2="44" stroke="var(--primary)" strokeWidth="2" />
               {/* Skyscraper background silhouette */}
-              <path d="M55 55 L55 10 L68 10 L68 55 M68 55 L68 18 L80 18 L80 55 M80 55 L80 28 L92 28 L92 55" fill="var(--white)" opacity="0.85" />
+              <path d="M55 55 L55 10 L68 10 L68 55 M68 55 L68 18 L80 18 L80 55 M80 55 L80 28 L92 28 L92 55" fill="var(--dark-bg)" opacity="0.15" />
               {/* M & J letters stylized base */}
               <path d="M15 80 L25 80 L30 65 L35 80 L45 80 M55 80 L65 80" stroke="var(--primary)" strokeWidth="6" strokeLinecap="round" />
             </svg>
