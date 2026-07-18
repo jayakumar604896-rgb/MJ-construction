@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 380" width="100%" height="100%">
+  <defs>
+    <style>
+      .navy-fill { fill: #0C2B5C; }
+      .orange-fill { fill: #F06529; }
+      .tagline-navy { fill: #0C2B5C; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; }
+      .tagline-orange { fill: #F06529; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; }
+      .logo-m { font-family: 'Outfit', 'Georgia', serif; font-size: 130px; font-weight: 800; fill: #0C2B5C; }
+      .logo-amp { font-family: 'Outfit', 'Georgia', serif; font-size: 70px; font-weight: 700; fill: #0C2B5C; }
+      .logo-j { font-family: 'Outfit', 'Georgia', serif; font-size: 140px; font-weight: 800; fill: #F06529; }
+      .logo-foundation { font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 800; fill: #0C2B5C; letter-spacing: 9px; }
+    </style>
+  </defs>
+
+  <!-- Background Skyscrapers behind the roof (on the right) -->
+  <!-- Navy Building Left -->
+  <path d="M210 160 L210 88 L238 62 L262 78 L262 160 Z" class="navy-fill" opacity="0.95" />
+  <!-- Orange Building Middle -->
+  <path d="M265 160 L265 42 L305 10 L322 28 L322 160 Z" class="orange-fill" />
+  <!-- Navy Striated Building Right -->
+  <path d="M325 160 L325 105 L352 105 L352 160 Z" class="navy-fill" />
+  <line x1="332" y1="112" x2="332" y2="155" stroke="#FFFFFF" stroke-width="2" />
+  <line x1="339" y1="112" x2="339" y2="155" stroke="#FFFFFF" stroke-width="2" />
+  <line x1="346" y1="112" x2="346" y2="155" stroke="#FFFFFF" stroke-width="2" />
+
+  <!-- House Roof skeleton -->
+  <path d="M60 162 L190 72 L320 162" stroke="#0C2B5C" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Window grid under the roof (Orange) -->
+  <rect x="175" y="112" width="30" height="30" fill="none" stroke="#F06529" stroke-width="4" stroke-linejoin="round" />
+  <rect x="179" y="116" width="10" height="10" class="orange-fill" />
+  <rect x="191" y="116" width="10" height="10" class="orange-fill" />
+  <rect x="179" y="128" width="10" height="10" class="orange-fill" />
+  <rect x="191" y="128" width="10" height="10" class="orange-fill" />
+
+  <!-- M & J Stylized Letters -->
+  <g transform="translate(0, 0)">
+    <text x="60" y="250" class="logo-m">M</text>
+    <text x="190" y="242" class="logo-amp">&amp;</text>
+    <!-- In the logo, J is shifted to the right, slightly overlapping and dropping below the M baseline -->
+    <text x="245" y="258" class="logo-j">J</text>
+  </g>
+
+  <!-- Segmented Divider Line under M&J -->
+  <line x1="48" y1="270" x2="162" y2="270" stroke="#0C2B5C" stroke-width="3.5" />
+  <line x1="172" y1="270" x2="228" y2="270" stroke="#F06529" stroke-width="3.5" />
+  <line x1="238" y1="270" x2="352" y2="270" stroke="#0C2B5C" stroke-width="3.5" />
+
+  <!-- FOUNDATION Text -->
+  <text x="204" y="306" class="logo-foundation" text-anchor="middle">FOUNDATION</text>
+
+  <!-- Tagline divider lines and text -->
+  <line x1="48" y1="328" x2="80" y2="328" stroke="#F06529" stroke-width="2" />
+  <text x="200" y="333" text-anchor="middle">
+    <tspan class="tagline-navy">Built on Trust. </tspan>
+    <tspan class="tagline-orange">Driven by Quality.</tspan>
+  </text>
+  <line x1="320" y1="328" x2="352" y2="328" stroke="#F06529" stroke-width="2" />
+</svg>

@@ -1,0 +1,236 @@
+.contactSection {
+  background-color: var(--white);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 4fr 6fr;
+  gap: 50px;
+  align-items: start;
+}
+
+/* Contact information left side card */
+.infoSide {
+  background-color: var(--dark-bg);
+  color: var(--white);
+  padding: 40px;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  text-align: left;
+}
+
+.infoTitle {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.infoSub {
+  color: var(--text-light-muted);
+  font-size: 0.95rem;
+  margin-bottom: 35px;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  list-style: none;
+  margin-bottom: 40px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.infoIconWrapper {
+  width: 44px;
+  height: 44px;
+  background-color: rgba(244, 180, 0, 0.15);
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.infoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.infoLabel {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary);
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.infoValue {
+  font-size: 0.95rem;
+  color: var(--white);
+  line-height: 1.4;
+}
+
+.socialGroup {
+  display: flex;
+  gap: 14px;
+}
+
+.socialBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--dark-card);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.socialBtn:hover {
+  background-color: var(--primary);
+  color: var(--dark-bg);
+  transform: translateY(-3px);
+}
+
+/* Contact form right side card */
+.formSide {
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid #E2E8F0;
+  text-align: left;
+}
+
+.formGroup {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.formLabel {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--dark-bg);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.formInput {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #CBD5E1;
+  border-radius: var(--border-radius);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: var(--transition);
+  background-color: var(--light-bg);
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: var(--primary);
+  background-color: var(--white);
+  box-shadow: 0 0 0 3px rgba(244, 180, 0, 0.15);
+}
+
+.formTextarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.errorText {
+  color: #EF4444;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+.inputError {
+  border-color: #EF4444 !important;
+  background-color: rgba(239, 68, 68, 0.03);
+}
+
+.submitBtn {
+  width: 100%;
+  font-size: 1.05rem;
+  padding: 14px;
+  border: none;
+}
+
+/* Submission Success State styling */
+.successMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.successIcon {
+  width: 70px;
+  height: 70px;
+  background-color: rgba(76, 175, 80, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4CAF50;
+  margin-bottom: 24px;
+}
+
+.successTitle {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--dark-bg);
+  margin-bottom: 12px;
+}
+
+.successDesc {
+  color: var(--text-muted);
+  font-size: 1rem;
+  max-width: 320px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .infoSide,
+  .formSide {
+    padding: 30px 20px;
+  }
+}

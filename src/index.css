@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #F06529;
+  --primary-hover: #D44A13;
+  --dark-bg: #0C2B5C;
+  --dark-card: #13386E;
+  --dark-accent: #061B3B;
+  --light-bg: #F9F9F9;
+  --white: #FFFFFF;
+  --text-main: #222222;
+  --text-muted: #666666;
+  --text-white: #FFFFFF;
+  --text-light-muted: #CCCCCC;
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.15);
+  --border-radius: 8px;
+  --border-radius-lg: 16px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --header-height: 80px;
+}
+
+/* CSS Resets & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background-color: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Swiper Slider styling overrides to match yellow theme */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--primary) !important;
+  background: rgba(34, 34, 34, 0.8);
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+  border: 1px solid rgba(244, 180, 0, 0.3);
+  transition: var(--transition);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 20px !important;
+  font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: var(--primary);
+  color: var(--dark-bg) !important;
+  border-color: var(--primary);
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--primary) !important;
+  width: 24px !important;
+  border-radius: 4px !important;
+  transition: var(--transition);
+}
+
+/* Smooth active animations and buttons styling */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  cursor: pointer;
+  text-decoration: none;
+  border: 2px solid transparent;
+  gap: 8px;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--dark-bg);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(244, 180, 0, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.btn-secondary:hover {
+  background-color: var(--white);
+  color: var(--dark-bg);
+  transform: translateY(-2px);
+}
+
+.btn-dark {
+  background-color: var(--dark-bg);
+  color: var(--white);
+}
+
+.btn-dark:hover {
+  background-color: #333333;
+  transform: translateY(-2px);
+}
+
+/* Page Layout elements */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark-bg);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: var(--primary);
+}
+
+.section-title p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 16px auto 0;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-accent);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-hover);
+}
