@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -11,25 +12,13 @@ import {
 import styles from './Footer.module.css';
 
 const Footer = () => {
-  const handleLinkClick = (e, sectionId) => {
-    e.preventDefault();
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offsetTop = element.offsetTop - 70;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth',
-      });
-    }
-  };
-
   return (
     <footer className={styles.footer}>
       <div className="container">
         <div className={styles.grid}>
           {/* Column 1: Branding */}
           <div className={styles.brandCol}>
-            <a href="#home" className={styles.logoContainer} onClick={(e) => handleLinkClick(e, 'home')}>
+            <Link to="/" className={styles.logoContainer}>
               <svg className={styles.logoIcon} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10 55 L50 20 L90 55" stroke="var(--primary)" strokeWidth="6" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                 <rect x="42" y="38" width="16" height="12" fill="none" stroke="var(--primary)" strokeWidth="3" />
@@ -42,9 +31,9 @@ const Footer = () => {
                 <h4 className={styles.logoTitle}>MJ <span>CONSTRUCTION</span></h4>
                 <span className={styles.logoSub}>Built on Trust. Driven by Quality.</span>
               </div>
-            </a>
+            </Link>
             <p className={styles.brandDesc}>
-              MJ Construction is a leading construction agency in Chennai. We turn visions into structures with premium designs, standard materials, and expert project management.
+              MJ Construction is a premier construction firm in Chennai. We deliver turnkey residential, commercial, interior, and architectural solutions with unyielding commitment to structural perfection and safety.
             </p>
             <div className={styles.socials}>
               <a href="https://facebook.com" className={styles.socialBtn} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
@@ -70,61 +59,44 @@ const Footer = () => {
             <h4 className={styles.colTitle}>Quick Links</h4>
             <ul className={styles.linksList}>
               <li>
-                <a href="#home" onClick={(e) => handleLinkClick(e, 'home')} className={styles.footerLink}>
-                  Home Page
-                </a>
+                <Link to="/" className={styles.footerLink}>Home Page</Link>
               </li>
               <li>
-                <a href="#about" onClick={(e) => handleLinkClick(e, 'about')} className={styles.footerLink}>
-                  About Company
-                </a>
+                <Link to="/about" className={styles.footerLink}>About Company</Link>
               </li>
               <li>
-                <a href="#services" onClick={(e) => handleLinkClick(e, 'services')} className={styles.footerLink}>
-                  Our Services
-                </a>
+                <Link to="/services" className={styles.footerLink}>Our Services</Link>
               </li>
               <li>
-                <a href="#gallery" onClick={(e) => handleLinkClick(e, 'gallery')} className={styles.footerLink}>
-                  Project Gallery
-                </a>
+                <Link to="/packages" className={styles.footerLink}>Packages & Pricing</Link>
               </li>
               <li>
-                <a href="#contact" onClick={(e) => handleLinkClick(e, 'contact')} className={styles.footerLink}>
-                  Contact Us
-                </a>
+                <Link to="/gallery" className={styles.footerLink}>Project Gallery</Link>
+              </li>
+              <li>
+                <Link to="/contact" className={styles.footerLink}>Contact Us</Link>
               </li>
             </ul>
           </div>
 
           {/* Column 3: Services */}
           <div>
-            <h4 className={styles.colTitle}>Services</h4>
+            <h4 className={styles.colTitle}>Key Services</h4>
             <ul className={styles.linksList}>
               <li>
-                <a href="#services" onClick={(e) => handleLinkClick(e, 'services')} className={styles.footerLink}>
-                  Building Construction
-                </a>
+                <Link to="/services/building-construction" className={styles.footerLink}>Building Construction</Link>
               </li>
               <li>
-                <a href="#services" onClick={(e) => handleLinkClick(e, 'services')} className={styles.footerLink}>
-                  Residential Development
-                </a>
+                <Link to="/services/residential-development" className={styles.footerLink}>Residential Development</Link>
               </li>
               <li>
-                <a href="#services" onClick={(e) => handleLinkClick(e, 'services')} className={styles.footerLink}>
-                  Interior Renovation
-                </a>
+                <Link to="/services/interior-renovation" className={styles.footerLink}>Interior Renovation</Link>
               </li>
               <li>
-                <a href="#services" onClick={(e) => handleLinkClick(e, 'services')} className={styles.footerLink}>
-                  Project Management
-                </a>
+                <Link to="/services/project-management" className={styles.footerLink}>Project Management</Link>
               </li>
               <li>
-                <a href="#services" onClick={(e) => handleLinkClick(e, 'services')} className={styles.footerLink}>
-                  Structural Planning
-                </a>
+                <Link to="/services/smart-design-planning" className={styles.footerLink}>Smart Design & Planning</Link>
               </li>
             </ul>
           </div>
@@ -155,9 +127,13 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} MJ Construction. All Rights Reserved.
           </p>
           <div className={styles.bottomLinks}>
-            <a href="#home" onClick={(e) => handleLinkClick(e, 'home')} className={styles.footerLink} style={{ fontSize: '0.8rem' }}>
-              Back to Top
-            </a>
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className={styles.footerLink}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '0.85rem' }}
+            >
+              Back to Top ↑
+            </button>
           </div>
         </div>
       </div>

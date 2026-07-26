@@ -1,0 +1,360 @@
+.aboutPage {
+  background-color: var(--white);
+}
+
+.subTag {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.storyTitle {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--dark-bg);
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.paragraph {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+.statsRow {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid #EEEEEE;
+}
+
+.statBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.statNumber {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.storyMedia {
+  position: relative;
+}
+
+.imageWrapperMain {
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.mainImg {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.badgeOverlay {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  background: var(--dark-bg);
+  color: var(--white);
+  padding: 20px 28px;
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--primary);
+}
+
+.badgeIcon {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.badgeOverlay h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin-bottom: 2px;
+}
+
+.badgeOverlay p {
+  font-size: 0.85rem;
+  color: var(--text-light-muted);
+}
+
+/* Values section */
+.valuesSection {
+  background-color: var(--light-bg);
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.valueCard {
+  background: var(--white);
+  padding: 36px 28px;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.valueCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.iconBox {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background: rgba(240, 101, 41, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.valueIcon {
+  font-size: 1.8rem;
+  color: var(--primary);
+}
+
+.valueCard h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--dark-bg);
+  margin-bottom: 12px;
+}
+
+.valueCard p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Team section */
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.teamCard {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  border: 1px solid #F0F0F0;
+}
+
+.teamCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.avatarWrapper {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.teamCard:hover .avatarImg {
+  transform: scale(1.05);
+}
+
+.teamInfo {
+  padding: 24px;
+}
+
+.teamInfo h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--dark-bg);
+  margin-bottom: 4px;
+}
+
+.teamRole {
+  display: block;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.teamExp {
+  display: inline-block;
+  background: rgba(12, 43, 92, 0.06);
+  color: var(--dark-bg);
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.teamBio {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Timeline */
+.timelineSection {
+  background-color: var(--dark-bg);
+  color: var(--white);
+}
+
+.timelineSection :global(.section-title) h2 {
+  color: var(--white);
+}
+
+.timelineSection :global(.section-title) p {
+  color: var(--text-light-muted);
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  position: relative;
+  margin-top: 20px;
+}
+
+.timelineItem {
+  background: var(--dark-card);
+  padding: 30px 24px;
+  border-radius: var(--border-radius-lg);
+  border-top: 4px solid var(--primary);
+  transition: var(--transition);
+}
+
+.timelineItem:hover {
+  transform: translateY(-5px);
+  background: #184280;
+}
+
+.timelineYear {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.timelineContent h4 {
+  font-size: 1.15rem;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.timelineContent p {
+  font-size: 0.9rem;
+  color: var(--text-light-muted);
+  line-height: 1.5;
+}
+
+/* CTA Banner */
+.ctaBanner {
+  background: linear-gradient(135deg, var(--primary) 0%, #d44a13 100%);
+  padding: 70px 0;
+  color: var(--dark-bg);
+}
+
+.ctaBox {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ctaBox h2 {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+  color: #061B3B;
+}
+
+.ctaBox p {
+  font-size: 1.1rem;
+  margin-bottom: 28px;
+  color: #1a2a40;
+  font-weight: 500;
+}
+
+.ctaBtns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 992px) {
+  .storyGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .badgeOverlay {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin-top: -30px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .storyTitle {
+    font-size: 1.8rem;
+  }
+
+  .statsRow {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .ctaBox h2 {
+    font-size: 1.7rem;
+  }
+}

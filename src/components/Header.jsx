@@ -1,33 +1,36 @@
 import { useState, useEffect } from 'react';
-import { FaPhoneAlt, FaWhatsapp } from 'react-icons/fa';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { FaWhatsapp } from 'react-icons/fa';
 import styles from './Header.module.css';
 
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
-      // Sticky header toggle
       if (window.scrollY > 50) {
         setIsSticky(true);
       } else {
         setIsSticky(false);
       }
 
-      // Active section highlight
-      const sections = ['home', 'about', 'services', 'gallery', 'contact'];
-      const scrollPosition = window.scrollY + 100; // offset
+      if (location.pathname === '/') {
+        const sections = ['home', 'about', 'services', 'pricing', 'gallery', 'contact'];
+        const scrollPosition = window.scrollY + 100;
 
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetHeight = element.offsetHeight;
+        for (const section of sections) {
+          const element = document.getElementById(section);
+          if (element) {
+            const offsetTop = element.offsetTop;
+            const offsetHeight = element.offsetHeight;
 
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
+            if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+              setActiveSection(section);
+            }
           }
         }
       }
@@ -35,73 +38,79 @@ const Header = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const handleLinkClick = (sectionId) => {
+  const handleNavClick = (path, sectionId = null) => {
     setIsMobileMenuOpen(false);
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offsetTop = element.offsetTop - 70; // offset for sticky header
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth',
-      });
+    if (location.pathname !== '/' && sectionId) {
+      navigate(`/#${sectionId}`);
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const offsetTop = element.offsetTop - 70;
+          window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+        }
+      }, 100);
+    } else if (sectionId && location.pathname === '/') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const offsetTop = element.offsetTop - 70;
+        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+      }
     }
   };
 
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'services', label: 'Services' },
-    { id: 'gallery', label: 'Gallery' },
-    { id: 'contact', label: 'Contact' },
+    { label: 'Home', path: '/', sectionId: 'home' },
+    { label: 'About', path: '/about', sectionId: 'about' },
+    { label: 'Services', path: '/services', sectionId: 'services' },
+    { label: 'Packages', path: '/packages', sectionId: 'pricing' },
+    { label: 'Gallery', path: '/gallery', sectionId: 'gallery' },
+    { label: 'Contact Us', path: '/contact', sectionId: 'contact' },
   ];
+
+  const isLinkActive = (item) => {
+    if (location.pathname === item.path) return true;
+    if (location.pathname === '/' && activeSection === item.sectionId) return true;
+    return false;
+  };
 
   return (
     <>
       <header className={`${styles.header} ${isSticky ? styles.sticky : ''}`}>
         <div className={styles.container}>
           {/* Brand Logo */}
-          <a href="#home" className={styles.logoContainer} onClick={(e) => { e.preventDefault(); handleLinkClick('home'); }}>
+          <Link to="/" className={styles.logoContainer} onClick={() => setIsMobileMenuOpen(false)}>
             <svg className={styles.logoIcon} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              {/* House roof skeleton */}
               <path d="M10 55 L50 20 L90 55" stroke="var(--primary)" strokeWidth="6" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-              {/* Window grid */}
               <rect x="42" y="38" width="16" height="12" fill="none" stroke="var(--primary)" strokeWidth="3" />
               <line x1="50" y1="38" x2="50" y2="50" stroke="var(--primary)" strokeWidth="2" />
               <line x1="42" y1="44" x2="58" y2="44" stroke="var(--primary)" strokeWidth="2" />
-              {/* Skyscraper background silhouette */}
               <path d="M55 55 L55 10 L68 10 L68 55 M68 55 L68 18 L80 18 L80 55 M80 55 L80 28 L92 28 L92 55" fill="var(--dark-bg)" opacity="0.15" />
-              {/* M & J letters stylized base */}
               <path d="M15 80 L25 80 L30 65 L35 80 L45 80 M55 80 L65 80" stroke="var(--primary)" strokeWidth="6" strokeLinecap="round" />
             </svg>
             <div className={styles.logoText}>
               <h1 className={styles.logoTitle}>MJ <span>CONSTRUCTION</span></h1>
               <span className={styles.logoSub}>Built on Trust. Driven by Quality.</span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className={styles.nav}>
             <ul className={styles.navLinks}>
-              {navItems.map((item) => (
-                <li key={item.id}>
-                  <a
-                    href={`#${item.id}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleLinkClick(item.id);
-                    }}
-                    className={`${styles.navLink} ${
-                      activeSection === item.id ? styles.activeLink : ''
-                    }`}
+              {navItems.map((item, idx) => (
+                <li key={idx}>
+                  <Link
+                    to={item.path}
+                    onClick={() => handleNavClick(item.path, item.sectionId)}
+                    className={`${styles.navLink} ${isLinkActive(item) ? styles.activeLink : ''}`}
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -131,24 +140,17 @@ const Header = () => {
       </header>
 
       {/* Mobile Sidebar Menu */}
-      <div
-        className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.mobileMenuOpen : ''}`}
-      >
+      <div className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.mobileMenuOpen : ''}`}>
         <ul className={styles.mobileNavLinks}>
-          {navItems.map((item) => (
-            <li key={item.id}>
-              <a
-                href={`#${item.id}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleLinkClick(item.id);
-                }}
-                className={`${styles.mobileNavLink} ${
-                  activeSection === item.id ? styles.activeLink : ''
-                }`}
+          {navItems.map((item, idx) => (
+            <li key={idx}>
+              <Link
+                to={item.path}
+                onClick={() => handleNavClick(item.path, item.sectionId)}
+                className={`${styles.mobileNavLink} ${isLinkActive(item) ? styles.activeLink : ''}`}
               >
                 {item.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

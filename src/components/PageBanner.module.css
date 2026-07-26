@@ -1,0 +1,162 @@
+.bannerContainer {
+  position: relative;
+  background-color: var(--dark-bg);
+  padding: 150px 0 80px;
+  overflow: hidden;
+  color: var(--white);
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+}
+
+.bannerBgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  transform: scale(1.03);
+  transition: transform 10s ease;
+  filter: brightness(0.8);
+}
+
+.bannerContainer:hover .bannerBgImage {
+  transform: scale(1.07);
+}
+
+.bgOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(6, 27, 59, 0.88) 0%, rgba(12, 43, 92, 0.94) 100%),
+              radial-gradient(circle at 70% 30%, rgba(240, 101, 41, 0.2) 0%, transparent 60%);
+  z-index: 1;
+}
+
+.patternGrid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.bannerContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bannerBadge {
+  display: inline-block;
+  background: rgba(240, 101, 41, 0.15);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  padding: 5px 16px;
+  border-radius: 20px;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  backdrop-filter: blur(4px);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 14px;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  color: var(--white);
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  color: var(--text-light-muted);
+  line-height: 1.6;
+  max-width: 700px;
+  margin-bottom: 24px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.breadcrumbs {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 8px 22px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 0.9rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.breadcrumbLink {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.breadcrumbLink:hover {
+  color: var(--primary);
+}
+
+.separator {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.crumbItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.currentCrumb {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .bannerContainer {
+    padding: 130px 0 60px;
+    min-height: 320px;
+  }
+
+  .title {
+    font-size: 2.1rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .breadcrumbs {
+    font-size: 0.82rem;
+    padding: 6px 16px;
+  }
+}
