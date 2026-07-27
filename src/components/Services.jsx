@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import {
   FaHardHat,
@@ -8,47 +9,39 @@ import {
   FaRoad,
 } from 'react-icons/fa';
 import styles from './Services.module.css';
+import { getServices } from '../services/api';
 
-const servicesData = [
-  {
-    icon: <FaHardHat className={styles.icon} />,
-    title: 'Building Construction',
-    description:
-      'End-to-end structural construction for corporate business parks, shopping complexes, and residential apartments with premium build materials.',
-  },
-  {
-    icon: <FaHome className={styles.icon} />,
-    title: 'Residential Development',
-    description:
-      'Designing and developing custom smart villas, row houses, and gated layouts that prioritize aesthetic comfort and spatial efficiency.',
-  },
-  {
-    icon: <FaPaintRoller className={styles.icon} />,
-    title: 'Interior Renovation',
-    description:
-      'Stunning modern renovations, customized modular modular kitchens, glass wall fitouts, and ceiling designs for home and workspace.',
-  },
-  {
-    icon: <FaRulerCombined className={styles.icon} />,
-    title: 'Project Management',
-    description:
-      'Meticulous quality audits, safety compliance checks, cost optimization plans, and regulatory license approvals under one roof.',
-  },
-  {
-    icon: <FaDraftingCompass className={styles.icon} />,
-    title: 'Smart Design & Planning',
-    description:
-      'Aesthetic 2D blueprint drafts, detailed structural layouts, elevation architecture, and 3D architectural mockups before starting execution.',
-  },
-  {
-    icon: <FaRoad className={styles.icon} />,
-    title: 'Infrastructure Construction',
-    description:
-      'Earth moving excavation, deep pile foundation building, industrial storage warehouses, and private layout tarmac roads.',
-  },
+const defaultIconMap = [
+  <FaHardHat className={styles.icon} key={1} />,
+  <FaHome className={styles.icon} key={2} />,
+  <FaPaintRoller className={styles.icon} key={3} />,
+  <FaRulerCombined className={styles.icon} key={4} />,
+  <FaDraftingCompass className={styles.icon} key={5} />,
+  <FaRoad className={styles.icon} key={6} />,
+];
+
+const fallbackServices = [
+  { title: 'Building Construction', short_desc: 'End-to-end structural construction for corporate business parks, shopping complexes, and residential apartments.' },
+  { title: 'Residential Development', short_desc: 'Designing and developing custom smart villas, row houses, and gated layouts that prioritize aesthetic comfort.' },
+  { title: 'Interior Renovation', short_desc: 'Stunning modern renovations, customized modular kitchens, glass wall fitouts, and ceiling designs.' },
+  { title: 'Project Management', short_desc: 'Meticulous quality audits, safety compliance checks, cost optimization plans, and regulatory approvals.' },
+  { title: 'Smart Design & Planning', short_desc: 'Aesthetic 2D blueprint drafts, detailed structural layouts, elevation architecture, and 3D architectural mockups.' },
+  { title: 'Infrastructure Construction', short_desc: 'Earth moving excavation, deep pile foundation building, industrial storage warehouses, and layout tarmac roads.' },
 ];
 
 const Services = () => {
+  const [services, setServices] = useState(fallbackServices);
+
+  useEffect(() => {
+    async function loadData() {
+      const data = await getServices();
+      if (Array.isArray(data) && data.length > 0) {
+        setServices(data);
+      }
+    }
+    loadData();
+  }, []);
+
   const containerVariants = {
     hidden: {},
     visible: {
@@ -84,15 +77,15 @@ const Services = () => {
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
         >
-          {servicesData.map((service, index) => (
+          {services.map((service, index) => (
             <motion.div
-              key={index}
+              key={service.id || index}
               className={styles.card}
               variants={cardVariants}
             >
-              <div className={styles.iconWrapper}>{service.icon}</div>
+              <div className={styles.iconWrapper}>{defaultIconMap[index % defaultIconMap.length]}</div>
               <h3 className={styles.title}>{service.title}</h3>
-              <p className={styles.description}>{service.description}</p>
+              <p className={styles.description}>{service.short_desc || service.description}</p>
             </motion.div>
           ))}
         </motion.div>

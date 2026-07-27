@@ -13,6 +13,7 @@ import {
   FaPaperPlane,
 } from 'react-icons/fa';
 import styles from './ContactForm.module.css';
+import { sendContactEnquiry } from '../services/api';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -61,17 +62,30 @@ const ContactForm = () => {
     return Object.keys(tempErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
       setIsSubmitting(true);
       
-      // Simulate API submit delay
-      setTimeout(() => {
+      try {
+        const res = await sendContactEnquiry({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          message: formData.message,
+        });
+
         setIsSubmitting(false);
-        setSubmitSuccess(true);
-        setFormData({ name: '', phone: '', email: '', message: '' });
-      }, 1500);
+        if (res && res.success !== false) {
+          setSubmitSuccess(true);
+          setFormData({ name: '', phone: '', email: '', message: '' });
+        } else {
+          setErrors({ submit: 'Failed to send message. Please try again.' });
+        }
+      } catch (err) {
+        setIsSubmitting(false);
+        setErrors({ submit: 'Failed to connect to backend server.' });
+      }
     }
   };
 
