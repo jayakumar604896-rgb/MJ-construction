@@ -4,12 +4,12 @@ import { FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import styles from './Gallery.module.css';
 
 // Import images
-import res1 from '../assets/gallery_res_1.png';
-import res2 from '../assets/gallery_res_2.png';
-import com1 from '../assets/gallery_com_1.png';
-import com2 from '../assets/gallery_com_2.png';
-import int1 from '../assets/gallery_int_1.png';
-import int2 from '../assets/gallery_int_2.png';
+import res1 from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.20 PM (2).jpeg';
+import res2 from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.20 PM (3).jpeg';
+import com1 from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.21 PM.jpeg';
+import com2 from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.21 PM (1).jpeg';
+import int1 from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.21 PM (2).jpeg';
+import int2 from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.22 PM.jpeg';
 
 const projectsData = [
   {

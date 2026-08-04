@@ -14,7 +14,7 @@ import PageBanner from '../components/PageBanner';
 import { packagesList } from '../data/packagesData';
 import styles from './PackagesPage.module.css';
 
-import packagesBannerBg from '../assets/hero_construction_3.png';
+import packagesBannerBg from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.24 PM.jpeg';
 
 const PackagesPage = () => {
   const [calcSqFt, setCalcSqFt] = useState(1800);

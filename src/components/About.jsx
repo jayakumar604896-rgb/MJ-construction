@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaAward, FaBuilding, FaUsers, FaArrowRight } from 'react-icons/fa';
 import styles from './About.module.css';
-import aboutImg from '../assets/about_company.png';
+import aboutImg from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.18 PM (2).jpeg';
 
 const About = () => {
   const handleContactClick = (e) => {

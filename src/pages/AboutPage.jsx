@@ -13,8 +13,12 @@ import {
 import PageBanner from '../components/PageBanner';
 import styles from './AboutPage.module.css';
 
-import aboutBannerImg from '../assets/about_company.png';
-import com1 from '../assets/gallery_com_1.png';
+import aboutBannerImg from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.23 PM (1).jpeg';
+import com1 from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.21 PM.jpeg';
+import team1 from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.22 PM (1).jpeg';
+import team2 from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.22 PM (2).jpeg';
+import team3 from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.22 PM (3).jpeg';
+import team4 from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.23 PM.jpeg';
 
 const AboutPage = () => {
   const values = [
@@ -46,28 +50,28 @@ const AboutPage = () => {
       role: 'Founder & Managing Director',
       exp: '18+ Years Experience',
       bio: 'Visionary civil engineer with over 200+ completed residential & commercial projects across Tamil Nadu.',
-      avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80',
+      avatar: team1,
     },
     {
       name: 'Ar. Priya Sundaram',
       role: 'Principal Architect',
       exp: '14+ Years Experience',
       bio: 'Master of modern elevation designs and Vastu-integrated space layouts for luxury homes and corporate spaces.',
-      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80',
+      avatar: team2,
     },
     {
       name: 'Er. R. Karthik',
       role: 'Head Structural Engineer',
       exp: '12+ Years Experience',
       bio: 'Specialist in seismic-resistant structural frames, deep pile foundations, and commercial high-rise analysis.',
-      avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80',
+      avatar: team3,
     },
     {
       name: 'S. Rajesh Kannan',
       role: 'General Manager - Projects',
       exp: '15+ Years Experience',
       bio: 'Manages site logistics, material procurement, contractor teams, and daily quality inspection protocols.',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
+      avatar: team4,
     },
   ];
 

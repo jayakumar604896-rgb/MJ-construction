@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import ScrollToTop from './components/ScrollToTop';
+import ConsultantChatbot from './components/ConsultantChatbot';
 
 import Home from './pages/Home';
 import AboutPage from './pages/AboutPage';
@@ -32,7 +33,7 @@ function App() {
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
-      <WhatsAppButton />
+      <ConsultantChatbot />
       <Footer />
     </Router>
   );

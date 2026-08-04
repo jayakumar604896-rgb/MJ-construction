@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { FaHome, FaChevronRight } from 'react-icons/fa';
 import styles from './PageBanner.module.css';
-import defaultBannerBg from '../assets/hero_construction_1.png';
+import defaultBannerBg from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.23 PM (2).jpeg';
 
 const PageBanner = ({ title, subtitle, breadcrumbs = [], bgImage = defaultBannerBg, badge = 'MJ CONSTRUCTION' }) => {
   return (

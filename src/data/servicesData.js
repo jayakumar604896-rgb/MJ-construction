@@ -1,9 +1,9 @@
-import res1 from '../assets/gallery_res_1.png';
-import res2 from '../assets/gallery_res_2.png';
-import com1 from '../assets/gallery_com_1.png';
-import com2 from '../assets/gallery_com_2.png';
-import int1 from '../assets/gallery_int_1.png';
-import int2 from '../assets/gallery_int_2.png';
+import srv1 from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.19 PM.jpeg';
+import srv2 from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.19 PM (1).jpeg';
+import srv3 from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.19 PM (2).jpeg';
+import srv4 from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.19 PM (3).jpeg';
+import srv5 from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.20 PM.jpeg';
+import srv6 from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.20 PM (1).jpeg';
 
 export const servicesList = [
   {
@@ -11,8 +11,8 @@ export const servicesList = [
     title: 'Building Construction',
     category: 'Turnkey Construction',
     shortDesc: 'End-to-end structural construction for commercial towers, corporate offices, and multi-story apartments using Grade 53 cement and TMT steel.',
-    heroImage: com1,
-    image: com1,
+    heroImage: srv1,
+    image: srv1,
     fullDesc: 'MJ Construction delivers world-class structural building construction tailored for residential complexes, IT parks, retail commercial buildings, and industrial facilities. Our team of certified structural engineers and project managers ensure strict compliance with IS codes, soil quality tests, seismic safety design, and precision concrete pouring.',
     features: [
       'Seismic Zone III compliant RCC framed structures',
@@ -54,8 +54,8 @@ export const servicesList = [
     title: 'Residential Development',
     category: 'Villas & Row Houses',
     shortDesc: 'Crafting dream homes, modern independent villas, and luxury row houses engineered for lifetime durability and elegant aesthetic appeal.',
-    heroImage: res1,
-    image: res1,
+    heroImage: srv2,
+    image: srv2,
     fullDesc: 'Transforming land into architectural masterpieces, our residential development service encompasses modern single-family homes, duplex villas, and premium gated communities. We blend functional spatial planning, natural lighting, Vastu compliance, and eco-friendly rainwater harvesting systems to build homes that appreciate in value.',
     features: [
       '100% Vastu-compliant architectural planning',
@@ -96,8 +96,8 @@ export const servicesList = [
     title: 'Interior Renovation',
     category: 'Home & Office Interiors',
     shortDesc: 'High-end interior remodels, customized acrylic modular kitchens, luxury gypsum ceiling designs, and custom woodwork fitouts.',
-    heroImage: int1,
-    image: int1,
+    heroImage: srv3,
+    image: srv3,
     fullDesc: 'Elevate your existing spaces into contemporary sanctuaries. Our interior renovation team specializes in space optimization, luxury modular kitchens, hardwood paneling, glass partitions, ambient mood lighting, and full home remodeling. We work with marine-grade BWP plywood and Hettich hardware to craft furniture that lasts.',
     features: [
       'Custom modular kitchens with soft-close Blum/Hettich hinges',
@@ -134,8 +134,8 @@ export const servicesList = [
     title: 'Project Management & Audit',
     category: 'Consulting & Supervision',
     shortDesc: 'Professional quality auditing, site supervision, material testing reports, safety inspections, and cost optimization consulting.',
-    heroImage: com2,
-    image: com2,
+    heroImage: srv4,
+    image: srv4,
     fullDesc: 'Ensure your construction investment is built right, stays on budget, and meets every safety code. Our certified project management consultants act as your independent eyes and ears on-site, performing strict structural quality audits, bill verification, material batch testing, and timeline management.',
     features: [
       'Independent site quality audit reports with photo evidence',
@@ -168,8 +168,8 @@ export const servicesList = [
     title: 'Smart Design & Architectural Planning',
     category: 'Architecture & 3D Renders',
     shortDesc: 'Comprehensive 2D blueprint drafting, 3D photorealistic architectural elevation renders, structural load calculations, and BIM modeling.',
-    heroImage: res2,
-    image: res2,
+    heroImage: srv5,
+    image: srv5,
     fullDesc: 'Great structures start with flawless plans. Our architectural wing combines artistic vision with structural precision to create functional, stunning spaces. We provide 2D municipal submission drawings, 3D exterior elevations, 3D interior renders, structural column-beam drawings, and plumbing/electrical conduits.',
     features: [
       'Photorealistic 3D daytime & night elevation renders',
@@ -202,8 +202,8 @@ export const servicesList = [
     title: 'Infrastructure Construction',
     category: 'Civil & Earthwork',
     shortDesc: 'Heavy civil engineering, excavation, pile foundations, industrial storage warehouses, layout tarmac roads, and retaining walls.',
-    heroImage: int2,
-    image: int2,
+    heroImage: srv6,
+    image: srv6,
     fullDesc: 'Engineered for heavy load capacity and durability, our infrastructure construction services cater to industrial warehouses, factory sheds, private layout tarmac roads, storm water drains, and heavy retaining structures. Equipped with modern earthmoving machinery and pile drilling rigs, we execute large-scale civil projects on schedule.',
     features: [
       'Bore pile & driven pile foundation construction',

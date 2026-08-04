@@ -12,10 +12,9 @@ import 'swiper/css/effect-fade';
 
 import styles from './HeroSlider.module.css';
 
-// Import assets
-import hero1 from '../assets/hero_construction_1.png';
-import hero2 from '../assets/hero_construction_2.png';
-import hero3 from '../assets/hero_construction_3.png';
+import hero1 from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.17 PM.jpeg';
+import hero2 from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.18 PM.jpeg';
+import hero3 from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.18 PM (1).jpeg';
 
 const slidesData = [
   {

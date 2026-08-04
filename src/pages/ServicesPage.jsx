@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -11,13 +11,25 @@ import {
   FaChevronDown,
 } from 'react-icons/fa';
 import PageBanner from '../components/PageBanner';
-import { servicesList } from '../data/servicesData';
+import { servicesList as fallbackServices } from '../data/servicesData';
+import { getServices } from '../services/api';
 import styles from './ServicesPage.module.css';
 
-import servicesBannerBg from '../assets/hero_construction_2.png';
+import servicesBannerBg from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.23 PM (2).jpeg';
 
 const ServicesPage = () => {
   const [openFaq, setOpenFaq] = useState(0);
+  const [services, setServices] = useState(fallbackServices);
+
+  useEffect(() => {
+    async function loadServices() {
+      const data = await getServices();
+      if (Array.isArray(data) && data.length > 0) {
+        setServices(data);
+      }
+    }
+    loadServices();
+  }, []);
 
   const workflowSteps = [
     {
@@ -84,7 +96,7 @@ const ServicesPage = () => {
           </div>
 
           <div className={styles.servicesGrid}>
-            {servicesList.map((service, idx) => (
+            {services.map((service, idx) => (
               <motion.div
                 key={service.slug}
                 className={styles.serviceCard}

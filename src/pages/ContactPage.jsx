@@ -15,7 +15,7 @@ import {
 import PageBanner from '../components/PageBanner';
 import styles from './ContactPage.module.css';
 
-import contactBannerBg from '../assets/about_company.png';
+import contactBannerBg from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.24 PM (1).jpeg';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({

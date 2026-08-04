@@ -12,7 +12,7 @@ import PageBanner from '../components/PageBanner';
 import { packagesList } from '../data/packagesData';
 import styles from './PackageDetailsPage.module.css';
 
-import pkgBannerBg from '../assets/hero_construction_1.png';
+import pkgBannerBg from '../assets/whatsapp_images/WhatsApp Image 2026-07-21 at 5.55.24 PM.jpeg';
 
 const PackageDetailsPage = () => {
   const { slug } = useParams();

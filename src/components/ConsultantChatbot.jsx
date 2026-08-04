@@ -30,6 +30,7 @@ const ConsultantChatbot = () => {
       { label: '📦 Compare Packages', action: 'packages' },
       { label: '📅 Book Free Site Visit', action: 'book' },
       { label: '💬 Chat on WhatsApp', action: 'whatsapp' },
+      { label: '📞 Call Us Directly', action: 'call' },
     ],
   };
 
@@ -190,6 +191,10 @@ const ConsultantChatbot = () => {
         );
         break;
 
+      case 'call':
+        window.location.href = 'tel:+918754947759';
+        break;
+
       case 'reset':
         setMessages([initialMessage]);
         break;
@@ -212,12 +217,6 @@ const ConsultantChatbot = () => {
           {unreadCount > 0 && !isOpen && <span className={styles.badge}>{unreadCount}</span>}
           <div className={styles.pulseRing}></div>
         </button>
-        {!isOpen && (
-          <div className={styles.hoverTooltip} onClick={() => setIsOpen(true)}>
-            <span className={styles.onlineDot}></span>
-            <span>Free Construction Consultant</span>
-          </div>
-        )}
       </div>
 
       {/* Chat Window Modal */}
