@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <g transform="translate(6, 12)">
+    <path d="M0 0 H24 V8 H8 V14 H20 V22 H8 V36 H0 Z" fill="#004B97"/>
+    <circle cx="28" cy="8" r="4" fill="#E31B23"/>
+  </g>
+  <text x="44" y="34" font-family="'Trebuchet MS', 'Arial', sans-serif" font-weight="900" font-size="22" fill="#004B97" letter-spacing="-0.5">Finolex</text>
+  <text x="45" y="47" font-family="'Arial', sans-serif" font-weight="800" font-size="10" fill="#E31B23" letter-spacing="3">CABLES</text>
+</svg>

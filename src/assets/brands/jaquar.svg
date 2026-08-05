@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <path d="M25 12 C18 20, 15 28, 25 44 C35 28, 32 20, 25 12 Z" fill="#0D254C"/>
+  <circle cx="25" cy="30" r="4" fill="#00A896"/>
+  <text x="54" y="36" font-family="'Century Gothic', 'Futura', sans-serif" font-weight="700" font-size="25" fill="#0D254C" letter-spacing="1">jaquar</text>
+</svg>

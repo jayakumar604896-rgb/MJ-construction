@@ -56,7 +56,7 @@
 
 .brandCard {
   background-color: var(--white);
-  padding: 30px 20px;
+  padding: 24px 16px;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-sm);
   border: 1px solid rgba(12, 43, 92, 0.04);
@@ -64,7 +64,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 130px;
+  height: 160px;
   transition: var(--transition);
 }
 
@@ -74,17 +74,40 @@
   box-shadow: var(--shadow-md);
 }
 
+.logoWrapper {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.brandLogo {
+  max-height: 42px;
+  max-width: 130px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.04));
+  transition: transform 0.3s ease;
+}
+
+.brandCard:hover .brandLogo {
+  transform: scale(1.05);
+}
+
 .brandName {
   font-family: var(--font-heading);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 800;
   color: var(--dark-bg);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   text-align: center;
 }
 
 .brandDesc {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--primary);
   font-weight: 600;
   text-transform: uppercase;
@@ -95,5 +118,23 @@
 @media (max-width: 768px) {
   .sectionTitle {
     font-size: 1.8rem;
+  }
+  .brandCard {
+    height: 150px;
+    padding: 20px 12px;
+  }
+  .logoWrapper {
+    height: 42px;
+    margin-bottom: 8px;
+  }
+  .brandLogo {
+    max-height: 36px;
+    max-width: 110px;
+  }
+  .brandName {
+    font-size: 0.9rem;
+  }
+  .brandDesc {
+    font-size: 0.68rem;
   }
 }

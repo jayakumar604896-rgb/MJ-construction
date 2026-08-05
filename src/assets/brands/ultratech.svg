@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <rect x="5" y="8" width="44" height="44" rx="6" fill="#F49A11"/>
+  <path d="M15 38 L27 18 L39 38 Z" fill="#1A2B4C"/>
+  <path d="M22 38 L27 27 L32 38 Z" fill="#F49A11"/>
+  <text x="56" y="32" font-family="'Montserrat', 'Arial Black', sans-serif" font-weight="900" font-size="20" fill="#1A2B4C" letter-spacing="-0.5">UltraTech</text>
+  <text x="57" y="46" font-family="'Arial', sans-serif" font-weight="700" font-size="11" fill="#F49A11" letter-spacing="2.5">CEMENT</text>
+</svg>

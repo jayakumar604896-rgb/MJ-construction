@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <path d="M12 42 C12 25, 24 15, 34 15 C26 23, 28 35, 38 42 C28 42, 20 45, 12 42 Z" fill="#E42313"/>
+  <circle cx="28" cy="22" r="5" fill="#F39A11"/>
+  <text x="48" y="36" font-family="'Helvetica Neue', 'Arial', sans-serif" font-weight="800" font-size="20" fill="#E42313" letter-spacing="-0.5">asianpaints</text>
+</svg>
